@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj5yeoj2u1nh"]
+
+[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://input_taker.gd" id="1_37kl0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="InputTaker" type="Node2D" parent="."]
+script = ExtResource("1_37kl0")
+metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 58.0
+offset_bottom = 28.0
+text = "Poyo"
