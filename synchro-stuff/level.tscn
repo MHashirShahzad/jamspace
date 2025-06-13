@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://by1mjypf2cf03"]
 
-[ext_resource type="Script" uid="uid://djibe17n73jn5" path="res://Script/InputSystem.gd" id="1_tumq0"]
+[ext_resource type="Script" uid="uid://djibe17n73jn5" path="res://synchro-stuff/InputSystem.gd" id="1_tumq0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tumq0"]
 bg_color = Color(0.162066, 0.162066, 0.162065, 1)

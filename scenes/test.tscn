@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dj5yeoj2u1nh"]
 
-[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://input_taker.gd" id="1_37kl0"]
-[ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://input_label.tscn" id="2_8uh7m"]
+[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="2_iyx0m"]
 
 [node name="Test" type="Node2D"]
 
@@ -17,27 +17,27 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="InputTaker" type="Node2D" parent="."]
-script = ExtResource("1_37kl0")
+script = ExtResource("1_bl13t")
 metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
 
 [node name="InputLabelContainer" type="Node2D" parent="."]
 
-[node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("2_8uh7m")]
+[node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("2_iyx0m")]
 position = Vector2(220, 163)
 
-[node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("2_8uh7m")]
+[node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("2_iyx0m")]
 position = Vector2(393, 191)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
 text = "Poyo"
 
-[node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("2_8uh7m")]
+[node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("2_iyx0m")]
 position = Vector2(662, 196)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
 text = "TypeMe"
 
-[node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("2_8uh7m")]
+[node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("2_iyx0m")]
 position = Vector2(535, 365)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]

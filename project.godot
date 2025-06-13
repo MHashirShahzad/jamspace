@@ -14,3 +14,7 @@ config/name="jamspace"
 run/main_scene="uid://dj5yeoj2u1nh"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scenes/global.tscn"

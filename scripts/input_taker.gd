@@ -14,6 +14,7 @@ func find_new_active_label(typed_character : String):
 	
 		if prompt_text.substr(0, 1) == typed_character:
 			active_label = input_label
+			active_label.label_focused()
 			print("New label found: `%s`" % active_label)
 			current_letter_index = 1
 			active_label.set_next_character(current_letter_index)
@@ -51,7 +52,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			if current_letter_index == prompt_text.length():
 				print("Label Completed: `%s`" % active_label)
 				current_letter_index = -1
-				active_label.queue_free()
+				active_label.label_completed()
 				active_label = null
+
+				if $"../InputLabelContainer".get_children() == []:
+					game_end()
 		else:
 			print("INCORRECT, typed '%s' expected '%s'" % [key_typed, next_character])
+			game_end()
+
+func game_end():
+	get_tree().quit()

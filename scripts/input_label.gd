@@ -7,6 +7,9 @@ class_name InputLabel
 
 @onready var prompt : RichTextLabel = $RichTextLabel
 
+signal label_destroyed
+
+
 func _ready() -> void:
 	prompt.text = prompt.text.strip_edges(true,true) # Strip spaces from left and right
 
@@ -18,6 +21,7 @@ func set_next_character(next_character_index : int):
 	if next_character_index != prompt.text.length():
 		red_text = enclose_string_in_bbcode(red, prompt.text.substr(next_character_index + 1, prompt.text.length() - next_character_index + 1))
 	
+	# EFFECTS :O
 	red_text = shake_effect(red_text)
 	green_text = shake_effect(green_text)
 	green_text = pulse_effect(green_text)
@@ -35,4 +39,34 @@ func shake_effect(string: String) -> String:
 
 func pulse_effect(string: String) -> String:
 	return "[pulse freq=3 color=#ffffff40 ease=-2.0]" + string + "[/pulse]"
+	
+func underline_effect(string: String) -> String:
+	return "[u]" + string + "[/u]"
+
+func label_completed() -> void:
+	#cpu_particles_2d.position = prompt.size / 2 # sets it in centre
+	#cpu_particles_2d.emitting = true
+	#
+	#await cpu_particles_2d.finished
+	var tween := get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "scale", Vector2(0.2, 0.2), .4)
+	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), .4)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	await tween.finished
+	label_destroyed.emit()
+	tween.kill()
+	self.queue_free()
+	
+	
+func label_focused() -> void:
+	
+	var tween := get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(1.4, 1.4), .2)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	await  tween.finished
+	tween.kill()
+	
 	
