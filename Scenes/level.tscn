@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://by1mjypf2cf03"]
+
+[ext_resource type="Script" uid="uid://djibe17n73jn5" path="res://Script/InputSystem.gd" id="1_tumq0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tumq0"]
+bg_color = Color(0.162066, 0.162066, 0.162065, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tumq0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 191.0
+offset_right = 675.0
+offset_bottom = 246.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 44.0
+offset_right = 724.0
+offset_bottom = 114.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Impossible"
+
+[node name="GameOverScreen" type="Node2D" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="GameOverScreen"]
+offset_left = 389.0
+offset_top = 147.0
+offset_right = 781.0
+offset_bottom = 514.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tumq0")
