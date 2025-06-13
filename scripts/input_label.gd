@@ -6,6 +6,7 @@ class_name InputLabel
 @export var red : Color = Color("#a65455")
 
 @onready var prompt : RichTextLabel = $RichTextLabel
+var has_been_typed : bool = false
 
 signal label_destroyed
 
@@ -48,6 +49,7 @@ func label_completed() -> void:
 	#cpu_particles_2d.emitting = true
 	#
 	#await cpu_particles_2d.finished
+	has_been_typed = true
 	var tween := get_tree().create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(self, "scale", Vector2(0.2, 0.2), .4)

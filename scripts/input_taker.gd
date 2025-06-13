@@ -4,22 +4,38 @@ class_name InputTaker
 var active_label : InputLabel = null
 var current_letter_index : int = -1
 
+func _ready() -> void:
+	call_deferred("pick_new_active_label")
+
+func pick_new_active_label() -> void:
+	var input_label = $"../InputLabelContainer".get_child(0) # First child
 	
-func find_new_active_label(typed_character : String):
-	for input_label in $"../InputLabelContainer".get_children():
-		if !(input_label is InputLabel):
-			return
-			
-		var prompt_text : String = input_label.prompt.text.to_lower()
+	if input_label.has_been_typed == true:
+		input_label =  $"../InputLabelContainer".get_child(1)
 	
-		if prompt_text.substr(0, 1) == typed_character:
-			active_label = input_label
-			active_label.label_focused()
-			print("New label found: `%s`" % active_label)
-			current_letter_index = 1
-			active_label.set_next_character(current_letter_index)
-			break
+	if input_label == null:
+		game_end()
+		return
 		
+	active_label = input_label
+	active_label.label_focused()
+	current_letter_index = 0
+	active_label.set_next_character(current_letter_index)
+
+func find_new_active_label(typed_character : String):
+	var input_label = $"../InputLabelContainer".get_child(0) # First child
+	if !(input_label is InputLabel):
+		return
+			
+	var prompt_text : String = input_label.prompt.text.to_lower()
+	
+	if prompt_text.substr(0, 1) == typed_character:
+		active_label = input_label
+		active_label.label_focused()
+		print("New label found: `%s`" % active_label)
+		current_letter_index = 1
+		active_label.set_next_character(current_letter_index)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if !(event is InputEventKey and not event.is_pressed()):
 		return
@@ -54,12 +70,10 @@ func _unhandled_input(event: InputEvent) -> void:
 				current_letter_index = -1
 				active_label.label_completed()
 				active_label = null
-
-				if $"../InputLabelContainer".get_children() == []:
-					game_end()
+				pick_new_active_label()
 		else:
 			print("INCORRECT, typed '%s' expected '%s'" % [key_typed, next_character])
-			game_end()
+			Global.lose_screen()
 
 func game_end():
 	get_tree().quit()

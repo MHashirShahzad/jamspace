@@ -6,8 +6,9 @@ var time_sec:int
 var time_msec:int
 var time_min:int
 var timer_stopped:bool
-@onready var time_label: Label = $CanvasLayer/TimeLabel
 
+@onready var time_label: Label = $TimerLayer/TimeLabel
+@onready var death_screen: CanvasLayer = $DeathScreen
 
 func _process(delta: float) -> void:
 	update_time(delta)
@@ -23,3 +24,22 @@ func update_time(delta):
 	#min_label.text = "%02d:" % time_min
 	#sec_label.text = "%02d." % time_sec
 	#msec_label.text = "%03d" % time_msec
+
+func lose_screen() -> void:
+	timer_stopped = true
+	print("You Survived for: ", time_label.text)
+	death_screen.show()
+
+
+func _on_restart_button_pressed() -> void:
+	TransitionManager.start_transition()
+	await TransitionManager.transiton_finsihed
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	death_screen.hide()
+	await TransitionManager.transition_fully_finished
+	timer_stopped = false
+
+func _on_quit_button_pressed() -> void:
+	TransitionManager.start_transition()
+	await TransitionManager.transiton_finsihed
+	get_tree().quit()

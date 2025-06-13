@@ -5,9 +5,56 @@
 [node name="Global" type="Node2D"]
 script = ExtResource("1_4pk28")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="TimerLayer" type="CanvasLayer" parent="."]
 
-[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+[node name="TimeLabel" type="Label" parent="TimerLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "time: "
+
+[node name="DeathScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="BG" type="ColorRect" parent="DeathScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="DeathScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_right = 106.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "You typed the wrong letter."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -21.5
+offset_right = 38.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="DeathScreen/VBoxContainer"]
+layout_mode = 2
+text = "Restart ?"
+
+[node name="QuitButton" type="Button" parent="DeathScreen/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="DeathScreen/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="DeathScreen/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
