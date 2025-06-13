@@ -1,0 +1,1 @@
+{"name":"deepsleep terminal","author":"","colors":["323232","535353","d25252","f07070","7fe173","9dff91","ffc66d","ffe48b","4099ff","5eb7f7","f680ff","ff9dff","bed6ff","dcf4ff","eeeeec","ffffff"]}

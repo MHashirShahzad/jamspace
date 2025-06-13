@@ -27,6 +27,7 @@ func update_time(delta):
 
 func lose_screen(lose_text : String) -> void:
 	$DeathScreen/VBoxContainer2/Mistake.text = lose_text
+	$DeathScreen/VBoxContainer/RestartButton.grab_focus()
 	timer_stopped = true
 	print("You Survived for: ", time_label.text)
 	death_screen.show()
@@ -34,6 +35,7 @@ func lose_screen(lose_text : String) -> void:
 func _on_restart_button_pressed() -> void:
 	TransitionManager.start_transition()
 	await TransitionManager.transiton_finsihed
+	print("File Path: %s" % get_tree().current_scene.scene_file_path)
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	death_screen.hide()
 	await TransitionManager.transition_fully_finished

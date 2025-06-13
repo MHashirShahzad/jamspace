@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://gwkie24n1xx6"]
+[gd_scene load_steps=3 format=3 uid="uid://gwkie24n1xx6"]
 
 [ext_resource type="Script" uid="uid://c1fppco4wns2v" path="res://scripts/input_label.gd" id="1_cl7tw"]
+[ext_resource type="FontFile" uid="uid://ci3niklnewjoj" path="res://assets/IntelOneMono/IntoneMonoNerdFontMono-Medium.ttf" id="2_pamjg"]
 
 [node name="InputLabel" type="Node2D"]
 script = ExtResource("1_cl7tw")
+blue = Color(0.25098, 0.6, 1, 1)
+green = Color(0.498039, 0.882353, 0.45098, 1)
+red = Color(0.823529, 0.321569, 0.321569, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -17,6 +21,7 @@ offset_right = 53.5
 offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_pamjg")
 bbcode_enabled = true
 text = "Hello"
 fit_content = true

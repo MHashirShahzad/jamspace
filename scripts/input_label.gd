@@ -13,6 +13,8 @@ signal label_destroyed
 
 func _ready() -> void:
 	prompt.text = prompt.text.strip_edges(true,true) # Strip spaces from left and right
+	
+	prompt.position = Vector2(-53.5, -23.5) # makes it scale better 
 
 func set_next_character(next_character_index : int):
 	var blue_text : String = enclose_string_in_bbcode(blue, prompt.text.substr(0, next_character_index))

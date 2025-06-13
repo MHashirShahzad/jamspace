@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0qa1habdae04"]
+
+[ext_resource type="Script" uid="uid://bphjyiyf5nwvs" path="res://scripts/level.gd" id="1_m7ahb"]
+[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="2_dwgg1"]
+[ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="3_ru4tf"]
+[ext_resource type="FontFile" uid="uid://doe17vpa6qwug" path="res://assets/IntelOneMono/IntoneMonoNerdFontPropo-Bold.ttf" id="4_dwgg1"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_m7ahb")
+metadata/_custom_type_script = "uid://bphjyiyf5nwvs"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InputTaker" type="Node2D" parent="."]
+script = ExtResource("2_dwgg1")
+metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
+
+[node name="InputLabelContainer" type="Node2D" parent="."]
+
+[node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("3_ru4tf")]
+position = Vector2(529, 18)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("4_dwgg1")
+theme_override_font_sizes/normal_font_size = 40
+text = "Banana"
+
+[node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("3_ru4tf")]
+position = Vector2(393, 191)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
+text = "An"
+
+[node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("3_ru4tf")]
+position = Vector2(662, 196)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
+text = "extremely"
+
+[node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("3_ru4tf")]
+position = Vector2(535, 365)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
+offset_left = -53.0
+offset_top = -23.0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "nutritional"
+
+[node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("3_ru4tf")]
+position = Vector2(834, 280)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
+offset_left = -53.0
+offset_top = -23.0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "fruit"
+
+[editable path="InputLabelContainer/InputLabel"]
+[editable path="InputLabelContainer/InputLabel2"]
+[editable path="InputLabelContainer/InputLabel3"]
+[editable path="InputLabelContainer/InputLabel4"]
+[editable path="InputLabelContainer/InputLabel5"]

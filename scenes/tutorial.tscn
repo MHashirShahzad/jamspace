@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsvtmfmts6qd7"]
+[gd_scene load_steps=7 format=3 uid="uid://bsvtmfmts6qd7"]
 
 [ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="1_8ho6b"]
 [ext_resource type="Script" uid="uid://bphjyiyf5nwvs" path="res://scripts/level.gd" id="1_ph3nu"]
-[ext_resource type="PackedScene" uid="uid://dj5yeoj2u1nh" path="res://scenes/test.tscn" id="2_4kmhl"]
+[ext_resource type="PackedScene" uid="uid://c0qa1habdae04" path="res://scenes/level1.tscn" id="2_6yjpi"]
 [ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="2_ph3nu"]
 [ext_resource type="FontFile" uid="uid://dbvcgmru2g6gf" path="res://assets/IntelOneMono/IntoneMonoNerdFontMono-Italic.ttf" id="3_cq4me"]
+[ext_resource type="Theme" uid="uid://0lgksmbcjdfr" path="res://default_theme.tres" id="6_6yjpi"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_ph3nu")
-next_level = ExtResource("2_4kmhl")
+next_level = ExtResource("2_6yjpi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -27,14 +28,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
+offset_left = -548.0
+offset_top = -60.0
+offset_right = 548.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_cq4me")
 theme_override_font_sizes/font_size = 15
-text = "Note: Making a mistake will make you lose the game, so u better not make a mistake. But not here, this is just training"
+text = "Note: Making a mistake will make you lose the game, so u better not make a mistake. But not here, this is just training.
+The text follows an order from left to right."
+horizontal_alignment = 1
 
 [node name="InputTaker" type="Node2D" parent="."]
 script = ExtResource("1_8ho6b")
@@ -49,30 +52,36 @@ scale = Vector2(2, 2)
 position = Vector2(220, 163)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
+theme = ExtResource("6_6yjpi")
+theme_override_font_sizes/normal_font_size = 20
 text = "You"
 
 [node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
 position = Vector2(291, 163)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
+theme_override_font_sizes/normal_font_size = 20
 text = "can"
 
 [node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
 position = Vector2(387, 163)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
+theme_override_font_sizes/normal_font_size = 20
 text = "type"
 
 [node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
 position = Vector2(471, 163)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
+theme_override_font_sizes/normal_font_size = 20
 text = "this"
 
 [node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
 position = Vector2(542.5, 163)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
+theme_override_font_sizes/normal_font_size = 20
 text = "easily"
 
 [editable path="InputLabelContainer/InputLabel"]

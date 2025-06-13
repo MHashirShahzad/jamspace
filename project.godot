@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Global="*res://scenes/global.tscn"
 TransitionManager="*res://transition_manager/transition_manager.tscn"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/PaletteTools/plugin.cfg")
+
 [gui]
 
+theme/custom="uid://0lgksmbcjdfr"
 theme/custom_font="uid://cl8opnbtg8iyp"

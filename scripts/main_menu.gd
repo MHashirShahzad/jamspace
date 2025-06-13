@@ -1,6 +1,9 @@
 extends Control
 
 
+func _ready() -> void:
+	$CanvasLayer/VBoxContainer/PlayButton.grab_focus()
+
 func _on_play_button_pressed() -> void:
 	TransitionManager.start_transition()
 	await TransitionManager.transiton_finsihed
