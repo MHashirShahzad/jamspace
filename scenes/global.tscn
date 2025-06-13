@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj8i75gpwr4js"]
+[gd_scene load_steps=4 format=3 uid="uid://bj8i75gpwr4js"]
 
 [ext_resource type="Script" uid="uid://drdu4evlrg78g" path="res://scripts/global.gd" id="1_4pk28"]
+[ext_resource type="FontFile" uid="uid://ck4oe2vwos6a3" path="res://assets/IntelOneMono/IntoneMonoNerdFont-LightItalic.ttf" id="2_nmxvb"]
+[ext_resource type="FontFile" uid="uid://j2sfcah136t0" path="res://assets/IntelOneMono/IntoneMonoNerdFontPropo-Medium.ttf" id="3_opebo"]
 
 [node name="Global" type="Node2D"]
 script = ExtResource("1_4pk28")
@@ -23,16 +25,27 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="DeathScreen"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="DeathScreen"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -106.0
-offset_right = 106.0
-offset_bottom = 23.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
 grow_horizontal = 2
+
+[node name="Label" type="Label" parent="DeathScreen/VBoxContainer2"]
+layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_nmxvb")
 theme_override_font_sizes/font_size = 20
+text = "You typed the wrong letter."
+
+[node name="Mistake" type="Label" parent="DeathScreen/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_opebo")
+theme_override_font_sizes/font_size = 16
 text = "You typed the wrong letter."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DeathScreen"]

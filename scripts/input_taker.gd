@@ -9,6 +9,7 @@ var current_letter_index : int = -1
 
 func _ready() -> void:
 	call_deferred("pick_new_active_label")
+	Global.timer_stopped = false
 
 func pick_new_active_label() -> void:
 	var input_label = $"../InputLabelContainer".get_child(0) # First child
@@ -76,10 +77,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				active_label = null
 				pick_new_active_label()
 		else:
-			print("INCORRECT, typed '%s' expected '%s'" % [key_typed, next_character])
+			var mistake : String = "Typed '%s', while expected '%s'" % [key_typed, next_character]
+			print(mistake)
 			
 			if perma_mistake:
-				Global.lose_screen()
+				Global.lose_screen(mistake)
 
+# i know i can use groups but whatever we need a game not a masterpiece of code
 func game_end():
-	get_tree().quit()
+	if get_parent() is Level2D:
+		TransitionManager.start_transition()
+		await TransitionManager.transiton_finsihed
+		get_tree().change_scene_to_packed(get_parent().next_level)

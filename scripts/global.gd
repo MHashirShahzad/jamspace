@@ -5,7 +5,7 @@ var time:float
 var time_sec:int
 var time_msec:int
 var time_min:int
-var timer_stopped:bool
+var timer_stopped : bool = true
 
 @onready var time_label: Label = $TimerLayer/TimeLabel
 @onready var death_screen: CanvasLayer = $DeathScreen
@@ -25,11 +25,11 @@ func update_time(delta):
 	#sec_label.text = "%02d." % time_sec
 	#msec_label.text = "%03d" % time_msec
 
-func lose_screen() -> void:
+func lose_screen(lose_text : String) -> void:
+	$DeathScreen/VBoxContainer2/Mistake.text = lose_text
 	timer_stopped = true
 	print("You Survived for: ", time_label.text)
 	death_screen.show()
-
 
 func _on_restart_button_pressed() -> void:
 	TransitionManager.start_transition()

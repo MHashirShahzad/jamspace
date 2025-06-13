@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="jamspace"
-run/main_scene="uid://dj5yeoj2u1nh"
+run/main_scene="uid://rpef728qpqsc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,3 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://scenes/global.tscn"
 TransitionManager="*res://transition_manager/transition_manager.tscn"
+
+[gui]
+
+theme/custom_font="uid://cl8opnbtg8iyp"

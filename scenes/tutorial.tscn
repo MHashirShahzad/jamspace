@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsvtmfmts6qd7"]
+[gd_scene load_steps=6 format=3 uid="uid://bsvtmfmts6qd7"]
 
 [ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="1_8ho6b"]
+[ext_resource type="Script" uid="uid://bphjyiyf5nwvs" path="res://scripts/level.gd" id="1_ph3nu"]
+[ext_resource type="PackedScene" uid="uid://dj5yeoj2u1nh" path="res://scenes/test.tscn" id="2_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="2_ph3nu"]
+[ext_resource type="FontFile" uid="uid://dbvcgmru2g6gf" path="res://assets/IntelOneMono/IntoneMonoNerdFontMono-Italic.ttf" id="3_cq4me"]
 
-[node name="Test" type="Node2D"]
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_ph3nu")
+next_level = ExtResource("2_4kmhl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -27,6 +32,8 @@ offset_top = -23.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_cq4me")
+theme_override_font_sizes/font_size = 15
 text = "Note: Making a mistake will make you lose the game, so u better not make a mistake. But not here, this is just training"
 
 [node name="InputTaker" type="Node2D" parent="."]
