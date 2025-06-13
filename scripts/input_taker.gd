@@ -4,6 +4,9 @@ class_name InputTaker
 var active_label : InputLabel = null
 var current_letter_index : int = -1
 
+## IF TRUE PLAYER DIES ON MAKING A MISTAKE
+@export var perma_mistake : bool = true
+
 func _ready() -> void:
 	call_deferred("pick_new_active_label")
 
@@ -11,7 +14,7 @@ func pick_new_active_label() -> void:
 	var input_label = $"../InputLabelContainer".get_child(0) # First child
 	
 	if input_label.has_been_typed == true:
-		input_label =  $"../InputLabelContainer".get_child(1)
+		input_label =  $"../InputLabelContainer".get_child(1) # Second child
 	
 	if input_label == null:
 		game_end()
@@ -58,7 +61,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		var next_character = prompt_text.substr(current_letter_index, 1)
 		
-		if key_typed == "space": key_typed = " " # still try not to use spaces in textLabels
+		if key_typed.length() > 1: # nullifies space and ctrl
+			return 
 		
 		if key_typed == next_character:
 			print("Success, typed '%s'" % key_typed)
@@ -73,7 +77,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				pick_new_active_label()
 		else:
 			print("INCORRECT, typed '%s' expected '%s'" % [key_typed, next_character])
-			Global.lose_screen()
+			
+			if perma_mistake:
+				Global.lose_screen()
 
 func game_end():
 	get_tree().quit()

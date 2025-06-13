@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsvtmfmts6qd7"]
+
+[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="1_8ho6b"]
+[ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="2_ph3nu"]
+
+[node name="Test" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Note: Making a mistake will make you lose the game, so u better not make a mistake. But not here, this is just training"
+
+[node name="InputTaker" type="Node2D" parent="."]
+script = ExtResource("1_8ho6b")
+perma_mistake = false
+metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
+
+[node name="InputLabelContainer" type="Node2D" parent="."]
+position = Vector2(-168, -3)
+scale = Vector2(2, 2)
+
+[node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
+position = Vector2(220, 163)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
+text = "You"
+
+[node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
+position = Vector2(291, 163)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
+text = "can"
+
+[node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
+position = Vector2(387, 163)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
+text = "type"
+
+[node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
+position = Vector2(471, 163)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
+text = "this"
+
+[node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
+position = Vector2(542.5, 163)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
+text = "easily"
+
+[editable path="InputLabelContainer/InputLabel"]
+[editable path="InputLabelContainer/InputLabel2"]
+[editable path="InputLabelContainer/InputLabel3"]
+[editable path="InputLabelContainer/InputLabel4"]
+[editable path="InputLabelContainer/InputLabel5"]
