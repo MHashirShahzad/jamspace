@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://bckhfracx8x1s"]
+
+[ext_resource type="Script" uid="uid://bphjyiyf5nwvs" path="res://scripts/level.gd" id="1_jyq2n"]
+[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="2_7uttt"]
+[ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="3_6lxtr"]
+[ext_resource type="FontFile" uid="uid://doe17vpa6qwug" path="res://assets/IntelOneMono/IntoneMonoNerdFontPropo-Bold.ttf" id="4_b72m1"]
+[ext_resource type="FontFile" uid="uid://c0fwv77eme1cj" path="res://assets/IntelOneMono/IntoneMonoNerdFont-Regular.ttf" id="5_7uttt"]
+
+[node name="Leve2" type="Node2D"]
+script = ExtResource("1_jyq2n")
+metadata/_custom_type_script = "uid://bphjyiyf5nwvs"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InputTaker" type="Node2D" parent="."]
+script = ExtResource("2_7uttt")
+metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
+
+[node name="InputLabelContainer" type="Node2D" parent="."]
+
+[node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(87, 34)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("4_b72m1")
+theme_override_font_sizes/normal_font_size = 40
+text = "Gather"
+
+[node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(245, 100)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("5_7uttt")
+theme_override_font_sizes/normal_font_size = 20
+text = "all"
+
+[node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(418, 165)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("5_7uttt")
+theme_override_font_sizes/normal_font_size = 20
+text = "monkeys"
+
+[node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(618, 195)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("5_7uttt")
+theme_override_font_sizes/normal_font_size = 20
+text = "and"
+
+[node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(832, 205)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("5_7uttt")
+theme_override_font_sizes/normal_font_size = 20
+text = "speak"
+
+[node name="InputLabel6" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(1008, 205)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel6" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("5_7uttt")
+theme_override_font_sizes/normal_font_size = 20
+text = "for"
+
+[node name="InputLabel7" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(329, 433)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel7" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("4_b72m1")
+theme_override_font_sizes/normal_font_size = 40
+text = "your"
+
+[node name="InputLabel8" parent="InputLabelContainer" instance=ExtResource("3_6lxtr")]
+position = Vector2(722, 417)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel8" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_font_sizes/normal_font_size = 45
+text = "RIGHTS"
+
+[editable path="InputLabelContainer/InputLabel"]
+[editable path="InputLabelContainer/InputLabel2"]
+[editable path="InputLabelContainer/InputLabel3"]
+[editable path="InputLabelContainer/InputLabel4"]
+[editable path="InputLabelContainer/InputLabel5"]
+[editable path="InputLabelContainer/InputLabel6"]
+[editable path="InputLabelContainer/InputLabel7"]
+[editable path="InputLabelContainer/InputLabel8"]

@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxb65wto4h4qd"]
+
+[ext_resource type="Script" uid="uid://bphjyiyf5nwvs" path="res://scripts/level.gd" id="1_2k3dv"]
+[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="2_alqfr"]
+[ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="3_yqkch"]
+[ext_resource type="FontFile" uid="uid://doe17vpa6qwug" path="res://assets/IntelOneMono/IntoneMonoNerdFontPropo-Bold.ttf" id="4_6ep0u"]
+
+[node name="Leve2" type="Node2D"]
+script = ExtResource("1_2k3dv")
+metadata/_custom_type_script = "uid://bphjyiyf5nwvs"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="InputTaker" type="Node2D" parent="."]
+script = ExtResource("2_alqfr")
+metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
+
+[node name="InputLabelContainer" type="Node2D" parent="."]
+
+[node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(388, 22)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
+offset_right = 133.5
+offset_bottom = 32.5
+theme_override_fonts/normal_font = ExtResource("4_6ep0u")
+theme_override_font_sizes/normal_font_size = 40
+text = "Money"
+
+[node name="InputLabel6" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(617, 21)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel6" index="0"]
+offset_left = -53.0
+offset_top = -23.0
+offset_right = 213.0
+offset_bottom = 33.0
+theme_override_fonts/normal_font = ExtResource("4_6ep0u")
+theme_override_font_sizes/normal_font_size = 40
+text = "Laundering"
+
+[node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(185, 148)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
+text = "Is"
+
+[node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(416, 219)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
+text = "cleaning"
+
+[node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(796, 216)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
+offset_left = -53.0
+offset_top = -23.0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "money"
+
+[node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(955, 167)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
+offset_left = -53.0
+offset_top = -23.0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "in"
+
+[node name="InputLabel7" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(1055, 254)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel7" index="0"]
+offset_left = -53.0
+offset_top = -23.0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "a"
+
+[node name="InputLabel8" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
+position = Vector2(643, 421)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel8" index="0"]
+offset_left = -53.0
+offset_top = -23.0
+offset_right = 104.0
+offset_bottom = 24.0
+text = "washingmachine"
+
+[editable path="InputLabelContainer/InputLabel"]
+[editable path="InputLabelContainer/InputLabel6"]
+[editable path="InputLabelContainer/InputLabel2"]
+[editable path="InputLabelContainer/InputLabel3"]
+[editable path="InputLabelContainer/InputLabel4"]
+[editable path="InputLabelContainer/InputLabel5"]
+[editable path="InputLabelContainer/InputLabel7"]
+[editable path="InputLabelContainer/InputLabel8"]
