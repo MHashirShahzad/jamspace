@@ -789,7 +789,7 @@ offset_bottom = 521.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.785398
-color = Color(0.0235294, 0.0235294, 0.0313726, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Bg1" type="ColorRect" parent="MultipleLinesTransition"]
 layout_mode = 1
@@ -803,20 +803,20 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.785398
-color = Color(0.0235294, 0.0235294, 0.0313726, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Stick2" type="ColorRect" parent="MultipleLinesTransition"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2897.0
-offset_top = -1257.0
-offset_right = 2981.0
-offset_bottom = 1139.0
+offset_left = 2177.0
+offset_top = -537.0
+offset_right = 2261.0
+offset_bottom = 1859.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.785398
-color = Color(0.0235294, 0.0235294, 0.0313726, 1)
+color = Color(0, 0, 0, 1)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

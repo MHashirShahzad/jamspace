@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxb65wto4h4qd"]
+[gd_scene load_steps=6 format=3 uid="uid://dxb65wto4h4qd"]
 
 [ext_resource type="Script" uid="uid://bphjyiyf5nwvs" path="res://scripts/level.gd" id="1_2k3dv"]
 [ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="2_alqfr"]
+[ext_resource type="PackedScene" uid="uid://bckhfracx8x1s" path="res://scenes/level3.tscn" id="2_yqkch"]
 [ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="3_yqkch"]
 [ext_resource type="FontFile" uid="uid://doe17vpa6qwug" path="res://assets/IntelOneMono/IntoneMonoNerdFontPropo-Bold.ttf" id="4_6ep0u"]
 
 [node name="Leve2" type="Node2D"]
 script = ExtResource("1_2k3dv")
+next_level = ExtResource("2_yqkch")
 metadata/_custom_type_script = "uid://bphjyiyf5nwvs"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -99,6 +101,9 @@ offset_top = -23.0
 offset_right = 104.0
 offset_bottom = 24.0
 text = "washingmachine"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 322)
 
 [editable path="InputLabelContainer/InputLabel"]
 [editable path="InputLabelContainer/InputLabel6"]
