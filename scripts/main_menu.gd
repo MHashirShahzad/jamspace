@@ -3,6 +3,7 @@ extends Control
 
 func _ready() -> void:
 	$CanvasLayer/VBoxContainer/PlayButton.grab_focus()
+	SfxManager.play_music(SfxManager.CLOCK, -10)
 
 func _on_play_button_pressed() -> void:
 	$CanvasLayer/VBoxContainer/PlayButton.disabled = true

@@ -39,6 +39,7 @@ extends Node2D
 	# preload("res://assets/audio/video-game-bonus.mp3")
 ]
 const INCORRECT_BUZZER_SOUND = preload("res://assets/audio/incorrect-buzzer-sound.mp3")
+const CLOCK = preload("res://assets/audio/Clock.mp3")
 
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 
