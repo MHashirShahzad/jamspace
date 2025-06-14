@@ -54,7 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# var key_typed = String.chr(typed_event.unicode) # for some reason unicode is 0
 	var key_typed = OS.get_keycode_string(typed_event.keycode).to_lower()
 	
-	SfxManager.play_FX(SfxManager.typing_sfx_array.pick_random())
+
 	print("KEY TYPED: `%s`" %  key_typed)
 	# print("Key Unicode: ", typed_event.unicode)
 		
@@ -67,6 +67,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		if key_typed.length() > 1: # nullifies space and ctrl
 			return 
+			
+		SfxManager.play_FX(SfxManager.typing_sfx_array.pick_random(), 1)
 		
 		if key_typed == next_character:
 			print("Success, typed '%s'" % key_typed)
@@ -75,6 +77,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			if current_letter_index == prompt_text.length():
 				print("Label Completed: `%s`" % active_label)
+				SfxManager.play_FX(SfxManager.correct_sfx_array.pick_random(), .6, 1, 1.2)
 				current_letter_index = -1
 				active_label.label_completed()
 				active_label = null
@@ -83,6 +86,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var mistake : String = "You typed '%s' instead of '%s'" % [key_typed, next_character]
 			
 			if perma_mistake:
+				SfxManager.play_FX(SfxManager.wrong_sfx_array.pick_random(), .8)
 				Global.lose_screen(mistake)
 
 # i know i can use groups but whatever we need a game not a masterpiece of code

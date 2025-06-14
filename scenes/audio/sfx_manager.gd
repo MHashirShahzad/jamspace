@@ -26,11 +26,23 @@ extends Node2D
 	preload("res://assets/audio/key_press4.mp3"),
 	preload("res://assets/audio/key_press5.mp3")
 ]
-
+@export var wrong_sfx_array : Array[AudioStream] = [
+	preload("res://assets/audio/blue-screen.mp3"),
+	preload("res://assets/audio/windows-error-sound-effect.mp3"),
+	preload("res://assets/audio/error-4.mp3")
+	
+]
+@export var correct_sfx_array : Array[AudioStream] = [
+	preload("res://assets/audio/coin-pickup.mp3"),
+	preload("res://assets/audio/game-start.mp3"),
+	# preload("res://assets/audio/game-bonus-2.mp3"),
+	# preload("res://assets/audio/video-game-bonus.mp3")
+]
+const INCORRECT_BUZZER_SOUND = preload("res://assets/audio/incorrect-buzzer-sound.mp3")
 
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 
-func play_music(stream : AudioStream, volume = 10, fade_dur = 1) -> void:
+func play_music(stream : AudioStream, volume = 1, fade_dur = 0, pitch_scale = 1) -> void:
 	# fade previous music
 	var tween := get_tree().create_tween()
 	tween.tween_property(music_player, "volume_db", -70, fade_dur)
@@ -39,7 +51,7 @@ func play_music(stream : AudioStream, volume = 10, fade_dur = 1) -> void:
 	
 	music_player.bus = &"Music"
 	music_player.stream = stream
-	music_player.pitch_scale = 1.0
+	music_player.pitch_scale = pitch_scale
 	music_player.play()
 	# fade in new music
 	var tween_2 := get_tree().create_tween()
@@ -48,7 +60,7 @@ func play_music(stream : AudioStream, volume = 10, fade_dur = 1) -> void:
 	tween_2.kill()
 	
 
-func play_FX(stream: AudioStream, volume = 10, lower_bound: int = 0.8, upper_bound: int = 1.3):
+func play_FX(stream: AudioStream, volume = 10, lower_bound: int = 0.9, upper_bound: int = 1.1):
 	# Create new stream player
 	var fx_player = AudioStreamPlayer.new()
 	# Assign its variables
