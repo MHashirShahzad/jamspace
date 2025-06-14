@@ -79,8 +79,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				active_label = null
 				pick_new_active_label()
 		else:
-			var mistake : String = "Typed '%s', while expected '%s'" % [key_typed, next_character]
-			print(mistake)
+			var mistake : String = "You typed '%s' instead of '%s'" % [key_typed, next_character]
 			
 			if perma_mistake:
 				Global.lose_screen(mistake)

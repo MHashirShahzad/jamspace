@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bj8i75gpwr4js"]
 
 [ext_resource type="Script" uid="uid://drdu4evlrg78g" path="res://scripts/global.gd" id="1_4pk28"]
-[ext_resource type="FontFile" uid="uid://ck4oe2vwos6a3" path="res://assets/IntelOneMono/IntoneMonoNerdFont-LightItalic.ttf" id="2_nmxvb"]
+[ext_resource type="FontFile" uid="uid://blx4vk78a7wy" path="res://assets/IntelOneMono/IntoneMonoNerdFont-Medium.ttf" id="2_opebo"]
 [ext_resource type="FontFile" uid="uid://j2sfcah136t0" path="res://assets/IntelOneMono/IntoneMonoNerdFontPropo-Medium.ttf" id="3_opebo"]
 
 [node name="Global" type="Node2D"]
@@ -38,9 +38,9 @@ grow_horizontal = 2
 [node name="Label" type="Label" parent="DeathScreen/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_nmxvb")
-theme_override_font_sizes/font_size = 20
-text = "You typed the wrong letter."
+theme_override_fonts/font = ExtResource("2_opebo")
+theme_override_font_sizes/font_size = 30
+text = "= You typed the wrong letter. ="
 
 [node name="Mistake" type="Label" parent="DeathScreen/VBoxContainer2"]
 layout_mode = 2

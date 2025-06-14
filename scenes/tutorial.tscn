@@ -23,20 +23,18 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -548.0
-offset_top = -60.0
-offset_right = 548.0
+offset_top = -90.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_cq4me")
-theme_override_font_sizes/font_size = 15
-text = "Note: Making a mistake will make you lose the game, so u better not make a mistake. But not here, this is just training.
-The text follows an order from left to right."
+theme_override_font_sizes/font_size = 20
+text = "Note: Making a mistake will make you lose the game, so u better not make a mistake. 
+But not here, this is just training.
+"
 horizontal_alignment = 1
 
 [node name="InputTaker" type="Node2D" parent="."]
@@ -46,42 +44,53 @@ metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
 
 [node name="InputLabelContainer" type="Node2D" parent="."]
 position = Vector2(-168, -3)
-scale = Vector2(2, 2)
 
 [node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
-position = Vector2(220, 163)
+position = Vector2(294, 319)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
+offset_top = -28.0
+offset_bottom = 28.0
 theme = ExtResource("6_6yjpi")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 40
 text = "You"
 
 [node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
-position = Vector2(291, 163)
+position = Vector2(502, 323)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
-theme_override_font_sizes/normal_font_size = 20
+offset_top = -28.0
+offset_bottom = 28.0
+theme_override_font_sizes/normal_font_size = 40
 text = "can"
 
 [node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
-position = Vector2(387, 163)
+position = Vector2(724, 325)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
-theme_override_font_sizes/normal_font_size = 20
+offset_top = -28.0
+offset_bottom = 28.0
+theme_override_font_sizes/normal_font_size = 40
 text = "type"
 
 [node name="InputLabel4" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
-position = Vector2(471, 163)
+position = Vector2(921, 327)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
-theme_override_font_sizes/normal_font_size = 20
+offset_top = -28.0
+offset_bottom = 28.0
+theme_override_font_sizes/normal_font_size = 40
 text = "this"
 
 [node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("2_ph3nu")]
-position = Vector2(542.5, 163)
+position = Vector2(1170, 325)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
-theme_override_font_sizes/normal_font_size = 20
+offset_left = -104.0
+offset_top = -56.0
+offset_right = 104.0
+offset_bottom = 56.0
+theme_override_font_sizes/normal_font_size = 40
 text = "easily"
 
 [node name="Camera2D" type="Camera2D" parent="."]
