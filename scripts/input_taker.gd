@@ -53,7 +53,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	# print("TYPED EVENT: ", typed_event)
 	# var key_typed = String.chr(typed_event.unicode) # for some reason unicode is 0
 	var key_typed = OS.get_keycode_string(typed_event.keycode).to_lower()
-		
+	
+	SfxManager.play_FX(SfxManager.typing_sfx_array.pick_random())
 	print("KEY TYPED: `%s`" %  key_typed)
 	# print("Key Unicode: ", typed_event.unicode)
 		
