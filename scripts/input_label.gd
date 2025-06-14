@@ -1,3 +1,5 @@
+@tool
+
 extends Node2D
 class_name InputLabel
 
@@ -10,11 +12,14 @@ var has_been_typed : bool = false
 
 signal label_destroyed
 
+func _process(delta):
+	if Engine.is_editor_hint():
+		prompt.position = - prompt.size / 2 # makes it scale better 
 
 func _ready() -> void:
 	prompt.text = prompt.text.strip_edges(true,true) # Strip spaces from left and right
-	
-	prompt.position = Vector2(-53.5, -23.5) # makes it scale better 
+	prompt.position = - prompt.size / 2 # makes it scale better 
+	print("SIZE: %s, Position: %s" % [prompt.size, prompt.position])
 
 func set_next_character(next_character_index : int):
 	var blue_text : String = enclose_string_in_bbcode(blue, prompt.text.substr(0, next_character_index))
@@ -54,8 +59,8 @@ func label_completed() -> void:
 	has_been_typed = true
 	var tween := get_tree().create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "scale", Vector2(0.2, 0.2), .4)
-	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), .4)
+	tween.tween_property(self, "scale", Vector2(0.2, 0.2), .3)
+	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), .3)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	
 	await tween.finished

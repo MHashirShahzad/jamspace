@@ -29,23 +29,25 @@ metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
 [node name="InputLabelContainer" type="Node2D" parent="."]
 
 [node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
-position = Vector2(388, 22)
+position = Vector2(450, 41)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
-offset_right = 133.5
-offset_bottom = 32.5
+offset_left = -93.5
+offset_top = -28.0
+offset_right = 93.5
+offset_bottom = 28.0
 theme_override_fonts/normal_font = ExtResource("4_6ep0u")
 theme_override_font_sizes/normal_font_size = 40
 text = "Money"
 
 [node name="InputLabel6" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
-position = Vector2(617, 21)
+position = Vector2(688, 43)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel6" index="0"]
-offset_left = -53.0
-offset_top = -23.0
-offset_right = 213.0
-offset_bottom = 33.0
+offset_left = -133.0
+offset_top = -28.0
+offset_right = 133.0
+offset_bottom = 28.0
 theme_override_fonts/normal_font = ExtResource("4_6ep0u")
 theme_override_font_sizes/normal_font_size = 40
 text = "Laundering"
@@ -66,40 +68,32 @@ text = "cleaning"
 position = Vector2(796, 216)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
-offset_left = -53.0
-offset_top = -23.0
-offset_right = 76.0
-offset_bottom = 24.0
+offset_left = -64.5
+offset_right = 64.5
 text = "money"
 
 [node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
 position = Vector2(955, 167)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
-offset_left = -53.0
-offset_top = -23.0
-offset_right = 76.0
-offset_bottom = 24.0
+offset_left = -64.5
+offset_right = 64.5
 text = "in"
 
 [node name="InputLabel7" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
 position = Vector2(1055, 254)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel7" index="0"]
-offset_left = -53.0
-offset_top = -23.0
-offset_right = 76.0
-offset_bottom = 24.0
+offset_left = -64.5
+offset_right = 64.5
 text = "a"
 
 [node name="InputLabel8" parent="InputLabelContainer" instance=ExtResource("3_yqkch")]
 position = Vector2(643, 421)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel8" index="0"]
-offset_left = -53.0
-offset_top = -23.0
-offset_right = 104.0
-offset_bottom = 24.0
+offset_left = -78.5
+offset_right = 78.5
 text = "washingmachine"
 
 [node name="Camera2D" type="Camera2D" parent="."]

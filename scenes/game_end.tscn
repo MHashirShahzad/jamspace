@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4ecp746y2win"]
+
+[ext_resource type="Script" uid="uid://bphjyiyf5nwvs" path="res://scripts/level.gd" id="1_c6nph"]
+[ext_resource type="PackedScene" uid="uid://rpef728qpqsc" path="res://scenes/main_menu.tscn" id="2_kcjj8"]
+[ext_resource type="FontFile" uid="uid://dbvcgmru2g6gf" path="res://assets/IntelOneMono/IntoneMonoNerdFontMono-Italic.ttf" id="3_kcjj8"]
+[ext_resource type="FontFile" uid="uid://bl1sweq6bsv1t" path="res://assets/IntelOneMono/IntoneMonoNerdFont-Bold.ttf" id="4_344vo"]
+[ext_resource type="Script" uid="uid://bcfuni3q1aa3s" path="res://scripts/input_taker.gd" id="4_nmcfy"]
+[ext_resource type="PackedScene" uid="uid://gwkie24n1xx6" path="res://scenes/input_label.tscn" id="5_3a5v0"]
+[ext_resource type="FontFile" uid="uid://j2sfcah136t0" path="res://assets/IntelOneMono/IntoneMonoNerdFontPropo-Medium.ttf" id="5_kcjj8"]
+[ext_resource type="Theme" uid="uid://0lgksmbcjdfr" path="res://default_theme.tres" id="6_2hgqa"]
+
+[node name="GameEnd" type="Node2D"]
+script = ExtResource("1_c6nph")
+next_level = ExtResource("2_kcjj8")
+is_last_level = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_344vo")
+theme_override_font_sizes/font_size = 30
+text = "- Congratulations. -"
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kcjj8")
+theme_override_font_sizes/font_size = 15
+text = "You  have completed the game in time:"
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_kcjj8")
+theme_override_font_sizes/font_size = 40
+text = "00:00.0"
+horizontal_alignment = 1
+
+[node name="InputTaker" type="Node2D" parent="."]
+script = ExtResource("4_nmcfy")
+perma_mistake = false
+metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
+
+[node name="InputLabelContainer" type="Node2D" parent="."]
+position = Vector2(-168, -3)
+
+[node name="InputLabel" parent="InputLabelContainer" instance=ExtResource("5_3a5v0")]
+position = Vector2(440, 442)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
+offset_left = -117.5
+offset_top = -42.0
+offset_right = 117.5
+offset_bottom = 42.0
+theme = ExtResource("6_2hgqa")
+theme_override_font_sizes/normal_font_size = 60
+text = "Back"
+
+[node name="InputLabel2" parent="InputLabelContainer" instance=ExtResource("5_3a5v0")]
+position = Vector2(716, 442)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel2" index="0"]
+offset_left = -117.5
+offset_top = -42.0
+offset_right = 117.5
+offset_bottom = 42.0
+theme = ExtResource("6_2hgqa")
+theme_override_font_sizes/normal_font_size = 60
+text = "to"
+
+[node name="InputLabel3" parent="InputLabelContainer" instance=ExtResource("5_3a5v0")]
+position = Vector2(1017, 436)
+
+[node name="RichTextLabel" parent="InputLabelContainer/InputLabel3" index="0"]
+offset_left = -163.0
+offset_top = -42.0
+offset_right = 163.0
+offset_bottom = 42.0
+theme = ExtResource("6_2hgqa")
+theme_override_font_sizes/normal_font_size = 60
+text = "Mainmenu"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 322)
+
+[editable path="InputLabelContainer/InputLabel"]
+[editable path="InputLabelContainer/InputLabel2"]
+[editable path="InputLabelContainer/InputLabel3"]

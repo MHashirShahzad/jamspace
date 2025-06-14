@@ -1,3 +1,4 @@
+
 extends Node2D
 class_name InputTaker
 
@@ -11,9 +12,10 @@ func _ready() -> void:
 	call_deferred("pick_new_active_label")
 	Global.timer_stopped = false
 
+
 func pick_new_active_label() -> void:
 	var input_label = $"../InputLabelContainer".get_child(0) # First child
-	
+
 	if input_label.has_been_typed == true:
 		input_label =  $"../InputLabelContainer".get_child(1) # Second child
 	

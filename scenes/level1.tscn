@@ -32,8 +32,10 @@ metadata/_custom_type_script = "uid://bcfuni3q1aa3s"
 position = Vector2(529, 18)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel" index="0"]
-offset_right = 133.5
-offset_bottom = 32.5
+offset_left = -93.5
+offset_top = -28.0
+offset_right = 93.5
+offset_bottom = 28.0
 theme_override_fonts/normal_font = ExtResource("4_dwgg1")
 theme_override_font_sizes/normal_font_size = 40
 text = "Banana"
@@ -54,20 +56,16 @@ text = "extremely"
 position = Vector2(796, 216)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel4" index="0"]
-offset_left = -53.0
-offset_top = -23.0
-offset_right = 76.0
-offset_bottom = 24.0
+offset_left = -64.5
+offset_right = 64.5
 text = "nutritional"
 
 [node name="InputLabel5" parent="InputLabelContainer" instance=ExtResource("3_ru4tf")]
 position = Vector2(955, 167)
 
 [node name="RichTextLabel" parent="InputLabelContainer/InputLabel5" index="0"]
-offset_left = -53.0
-offset_top = -23.0
-offset_right = 76.0
-offset_bottom = 24.0
+offset_left = -64.5
+offset_right = 64.5
 text = "fruit"
 
 [node name="Camera2D" type="Camera2D" parent="."]
