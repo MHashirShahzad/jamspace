@@ -10,6 +10,7 @@ func _on_play_button_pressed() -> void:
 	
 	TransitionManager.start_transition()
 	await TransitionManager.transiton_finsihed
+	Global.time = 0
 	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 
