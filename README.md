@@ -1,4 +1,6 @@
 # jamspace
+Game submitted and completed
+
 A game for jamspace game jam :O
 GameName: TypingTrouble
 Developers: Bongoya & Synchroya
